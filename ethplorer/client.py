@@ -5,7 +5,7 @@ class Client:
     API_URL = 'https://api.ethplorer.io'
     API_KEY = {"apiKey": "freekey"}
 
-    def __init__(self, url='', proxies=None):
+    def __init__(self, proxies, url=''):
         self.http_client = requests.session()
         self.proxies = proxies
 
