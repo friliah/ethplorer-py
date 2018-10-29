@@ -5,8 +5,9 @@ class Transaction(Client):
 
     TX_INFO = '/getTxInfo/'
 
-    def __init__(self, hash=''):
-        Client.__init__(self)
+
+    def __init__(self, hash='', proxies=None):
+        Client.__init__(self, proxies)
         self.hash = hash
 
     def get_transaction_info(self):

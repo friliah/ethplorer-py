@@ -5,12 +5,14 @@ class Client:
     API_URL = 'https://api.ethplorer.io'
     API_KEY = {"apiKey": "freekey"}
 
-    def __init__(self, url=''):
+    def __init__(self, url='', proxies=None):
         self.http_client = requests.session()
+        self.proxies = proxies
 
     def connect(self):
         try:
-            response = self.http_client.get(self.url, params=self.API_KEY)
+            response = self.http_client.get(self.url, params=self.API_KEY,
+                                            proxies=self.proxies)
             if response.status_code == 200:
                 return response.json()
         except requests.exceptions.ConnectionError:

@@ -6,8 +6,8 @@ class Address(Client):
     ADDRESS_HISTORY = '/getAddressHistory/'
     ADDRESS_TRANSACTIONS = '/getAddressTransactions/'
 
-    def __init__(self, address=''):
-        Client.__init__(self)
+    def __init__(self, address='', proxies=None):
+        Client.__init__(self, proxies)
         self.address = address
 
     def get_address_info(self):

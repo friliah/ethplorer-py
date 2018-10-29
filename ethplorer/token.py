@@ -7,8 +7,8 @@ class Token(Client):
     TOKEN_HISTORY = '/getTokenHistory/'
     TOP_TOKENS = '/getTopTokens'
 
-    def __init__(self, address=''):
-        Client.__init__(self)
+    def __init__(self, address='', proxies=None):
+        Client.__init__(self, proxies)
         self.address = address
 
     def get_token_info(self):
